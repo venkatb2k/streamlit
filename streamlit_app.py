@@ -1,5 +1,7 @@
 import streamlit as st
+import streamlit as stimport pandas as pdimport numpy as np
+
 x = st.slider("Select a value")
 st.write(x, "squared is", x * x)
 
-import streamlit as stimport pandas as pdimport numpy as npdf= pd.DataFrame(    np.random.randn(10, 2),    columns=['x', 'y'])st.bar_chart(df)
+df= pd.DataFrame(    np.random.randn(10, 2),    columns=['x', 'y'])st.bar_chart(df)
