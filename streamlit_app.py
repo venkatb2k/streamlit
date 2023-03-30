@@ -36,7 +36,7 @@ st.pyplot(fig)
 
 df = pd.read_csv('event_time.csv')
 
-pivot_event = df.pivot_table(values='events', index='task_name', columns='task_name')
+pivot_event = df.pivot_table(values='events', index='ID', columns='task_name')
 
 fig_e, ax_e = plt.subplots()
 pivot_event.plot(kind='line', ax=ax_e)
