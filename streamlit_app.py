@@ -14,7 +14,7 @@ df = pd.read_csv('data.csv')
 # Create a pivot table
 pivot_data = df.pivot_table(values='age', index='name', columns='city')
 fig, ax = plt.subplots()
-pivot.plot(kind='line', ax=ax)
+pivot_data.plot(kind='line', ax=ax)
 
 # Set chart title and axis labels
 ax.set_title('Age by City and Name')
