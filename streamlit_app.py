@@ -23,7 +23,7 @@ pivot = df.pivot_table(values='Sales', index='Name', columns='Product')
 
 # Create a bar chart
 fig, ax = plt.subplots()
-pivot.plot(kind='bar', ax=ax)
+pivot.plot(kind='line', ax=ax)
 
 # Set chart title and axis labels
 ax.set_title('Sales by Product and Name')
