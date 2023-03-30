@@ -10,6 +10,9 @@ df= pd.DataFrame(    np.random.randn(10, 2),    columns=['x', 'y'])
 st.bar_chart(df)
 
 
+df = pd.read_csv('data.csv')
+df = df[df['age'] > 25]
+print(df)
 
 
 # Create a sample dataframe
