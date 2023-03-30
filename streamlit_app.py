@@ -33,3 +33,18 @@ ax.set_ylabel('Sales')
 
 # Display the chart using Streamlit
 st.pyplot(fig)
+
+df = pd.read_csv('event_time.csv')
+
+pivot_event = df.pivot_table(values='events', index='task_name', columns='task_name')
+
+fig_e, ax_e = plt.subplots()
+pivot_event.plot(kind='line', ax=ax_e)
+
+# Set chart title and axis labels
+ax_e.set_title('Event by Id and Task name')
+ax_e.set_xlabel('ID')
+ax_e.set_ylabel('events')
+
+st.pyplot(fig_e)
+
