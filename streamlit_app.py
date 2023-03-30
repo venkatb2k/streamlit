@@ -11,27 +11,37 @@ st.bar_chart(df)
 
 
 df = pd.read_csv('data.csv')
-df = df[df['age'] > 25]
-print(df)
-
-
-# Create a sample dataframe
-data = {'Name': ['Alice', 'Bob', 'Charlie', 'Alice', 'Bob', 'Charlie', 'Alice', 'Bob', 'Charlie'],
-        'Product': ['Apples', 'Apples', 'Apples', 'Oranges', 'Oranges', 'Oranges', 'Pears', 'Pears', 'Pears'],
-        'Sales': [100, 200, 300, 50, 75, 125, 75, 100, 150]}
-df = pd.DataFrame(data)
-
 # Create a pivot table
-pivot = df.pivot_table(values='Sales', index='Name', columns='Product')
-
-# Create a bar chart
+pivot_data = df.pivot_table(values='age', index='name', columns='city')
 fig, ax = plt.subplots()
 pivot.plot(kind='line', ax=ax)
 
 # Set chart title and axis labels
-ax.set_title('Sales by Product and Name')
-ax.set_xlabel('Name')
-ax.set_ylabel('Sales')
+ax.set_title('Age by City and Name')
+ax.set_xlabel('City')
+ax.set_ylabel('Age')
 
 # Display the chart using Streamlit
 st.pyplot(fig)
+
+
+# Create a sample dataframe
+# data = {'Name': ['Alice', 'Bob', 'Charlie', 'Alice', 'Bob', 'Charlie', 'Alice', 'Bob', 'Charlie'],
+#         'Product': ['Apples', 'Apples', 'Apples', 'Oranges', 'Oranges', 'Oranges', 'Pears', 'Pears', 'Pears'],
+#         'Sales': [100, 200, 300, 50, 75, 125, 75, 100, 150]}
+# df = pd.DataFrame(data)
+
+# # Create a pivot table
+# pivot = df.pivot_table(values='Sales', index='Name', columns='Product')
+
+# # Create a bar chart
+# fig, ax = plt.subplots()
+# pivot.plot(kind='line', ax=ax)
+
+# # Set chart title and axis labels
+# ax.set_title('Sales by Product and Name')
+# ax.set_xlabel('Name')
+# ax.set_ylabel('Sales')
+
+# # Display the chart using Streamlit
+# st.pyplot(fig)
