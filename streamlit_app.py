@@ -18,8 +18,8 @@ pivot_data.plot(kind='line', ax=ax)
 
 # Set chart title and axis labels
 ax.set_title('Age by City and Name')
-ax.set_xlabel('City')
-ax.set_ylabel('Age')
+ax.set_xlabel('name')
+ax.set_ylabel('age')
 
 # Display the chart using Streamlit
 st.pyplot(fig)
